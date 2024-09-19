@@ -8,13 +8,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Show OS
-        run: echo "Run for $RUNNER_OS"
+        run: echo "I am running on $RUNNER_OS"
 
   windows:
     runs-on: windows-latest
     steps:
       - name: Show OS
-        run: echo "Run for $RUNNER_OS"
+        shell: bash
+        run: echo "I am running on $RUNNER_OS"
 
 #  macos:
 #    runs-on: macos-latest
