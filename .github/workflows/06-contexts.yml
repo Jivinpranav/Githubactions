@@ -17,5 +17,5 @@ jobs:
       echo "Workflow is: ${{github.workflow}}"
       echo "RUN ID: ${{github.run_id}}"
       echo "Run number is: ${{github.run_number}}"
-      echo "The URL is: ${{github.url}}
+      
 
