@@ -10,12 +10,12 @@ jobs:
   steps:
    - name: Display information
      run: |
-      echo: "Event name: ${{github.event_name}}"
-      echo: "Ref details: ${{github.ref}}"
-      echo: "SHA is: ${{github.sha}}"
-      echo: "Actor is: ${{github.actor}}"
-      echo: "Workflow is: ${{github.workflow}}"
-      echo: "RUN ID: ${{github.run_id}}"
-      echo: "Run number is: ${{github.run_number}}"
-      echo: "The URL is: ${{github.url}}
+      echo "Event name: ${{github.event_name}}"
+      echo "Ref details: ${{github.ref}}"
+      echo "SHA is: ${{github.sha}}"
+      echo "Actor is: ${{github.actor}}"
+      echo "Workflow is: ${{github.workflow}}"
+      echo "RUN ID: ${{github.run_id}}"
+      echo "Run number is: ${{github.run_number}}"
+      echo "The URL is: ${{github.url}}
 
