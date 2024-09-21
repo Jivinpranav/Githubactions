@@ -1,10 +1,10 @@
 name: 05-2-filters-activity-types
 
 on:
- pull_request:
+ workflow_dispatch:
   branches:
    - main
-  types: [closed]
+       types: [closed]
 
 jobs:
   echo:
