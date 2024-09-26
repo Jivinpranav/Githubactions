@@ -21,4 +21,13 @@ jobs:
           echo "Branch is: ${{ github.ref }}"
           echo "Commit SHA: ${{ github.sha }}"
           echo "Runner OS is: ${{ runner.os }}"
+          echo "Commit SHA: ${{ github.sha }}"
+          
+      - name: "[debug] Print when triggered from main"
+        if: ${{input.debug == 'true' }}
+        run: |
+          echo "I was triggered from main"
+          
+          
+          echo "Runner OS is: ${{ runner.os }}"
  
