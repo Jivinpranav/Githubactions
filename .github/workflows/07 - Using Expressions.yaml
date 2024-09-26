@@ -6,6 +6,7 @@ on:
     inputs:
       debug:
         description: 'Enable debug mode'
+        type: boolean
         required: false
         default: false
 
