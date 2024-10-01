@@ -23,4 +23,4 @@ jobs:
 
       - name: perform some tests
         run: |
-         echo "Running tests on OS $matrix.os and $matrix.node-version
+         echo "Running tests on OS $matrix.os and $matrix.node-version"
