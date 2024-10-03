@@ -1,0 +1,47 @@
+name: 08-variables
+ 
+on:
+  push:
+    branches:
+      - main
+ 
+jobs:
+  # First job: build
+  build:
+    runs-on: ubuntu-latest
+    env:
+      # Existing workflow-level variable
+      OVERWRITTEN_VAR: overwritten value
+      # Add the new workflow-level variable
+      UNDEFINED_VAR_WITH_DEFAULT: ${{ vars.UNDEFINED_VAR || 'default value' }}
+    steps:
+      - name: Check variables
+        run: |
+          echo "Repository-level variable: $REPOSITORY_VAR"
+          echo "Environment-level TARGET_VAR: $TARGET_VAR"
+          echo "Environment-level OVERWRITTEN_VAR: $OVERWRITTEN_VAR"
+          echo "Workflow-level UNDEFINED_VAR_WITH_DEFAULT: $UNDEFINED_VAR_WITH_DEFAULT"
+ 
+  # Second job: echo2
+  echo2:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print Variables
+        run: 'echo "Repo var: $REPOSITORY_VAR"'
+ 
+  # Third job: echo-prod
+  echo-prod:
+    runs-on: ubuntu-latest
+    environment: prod  # Setting the job to the 'prod' environment
+    steps:
+      - name: Print Prod Variables
+        run: |
+          echo "Repo var: $REPOSITORY_VAR"
+          echo "Environment var: $TARGET_VAR"
+ 
+  # Fourth job: echo-undefined
+  echo-undefined:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print Undefined Variables
+        run: 'echo "Org var: $UNDEFINED_VAR_WITH_DEFAULT"'
